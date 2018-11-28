@@ -1,0 +1,38 @@
+" coding
+syntax on
+filetype plugin indent on
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autowrite
+set updatetime=750
+
+" look and feel
+set rtp+=/Users/mb3/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+set laststatus=2
+set t_Co=256
+
+" vim-plug
+call plug#begin()
+
+if version >= 704
+  Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+  Plug 'fatih/molokai'
+endif
+
+call plug#end()
+
+if version >= 704
+  " vim-go options
+  let g:go_fmt_command = "goimports"
+  let g:go_highlight_types = 1
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods = 1
+  let g:go_auto_type_info = 1
+  let g:go_auto_sameids = 1
+  " molokai options
+  let g:rehash256 = 1
+  let g:molokai_original = 1
+  colorscheme molokai
+endif
