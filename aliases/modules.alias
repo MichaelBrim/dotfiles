@@ -1,0 +1,8 @@
+# module commands
+modav ALIASTO 'module avail'
+modls ALIASTO 'module list'
+modld ALIASTO 'module load'
+moduld ALIASTO 'module unload'
+modsh ALIASTO 'module show'
+modswp ALIASTO 'module swap'
+

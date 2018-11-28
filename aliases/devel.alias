@@ -1,0 +1,19 @@
+# misc devel helpers
+clean ALIASTO '/bin/rm -f *~ core.*'
+
+# redhat
+rhdev ALIASTO 'scl enable devtoolset-2'
+
+# diffs
+patchdiff ALIASTO 'diff -Naur'
+pdiff ALIASTO 'patchdiff'
+udiff ALIASTO 'diff -u'
+
+# git
+ga ALIASTO 'git add'
+gc ALIASTO 'git commit -m'
+gd ALIASTO 'git diff'
+gf ALIASTO 'git fetch'
+gp ALIASTO 'git pull'
+gs ALIASTO 'git status'
+

@@ -1,0 +1,41 @@
+# misc mjb scripts
+killvnc ALIASTO '$HOME/scripts/util/kill_VNC_server.sh home'
+ldpth ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT LD_LIBRARY_PATH`'
+ldadd ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT LD_LIBRARY_PATH add ARGV`'
+ldrm ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT LD_LIBRARY_PATH rm ARGV`'
+note ALIASTO '$HOME/scripts/util/note.sh'
+pth ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT PATH`'
+pthadd ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT PATH add ARGV`'
+pthrm ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT PATH rm ARGV`'
+sfvl ALIASTO '$HOME/scripts/software/snoflake/view-snoflake-log.bash -c'
+
+# HPSS
+hsils ALIASTO 'hsi ls'
+hsilsr ALIASTO 'hsi ls -R'
+hsill ALIASTO 'hsi ls -B'
+hsillr ALIASTO 'hsi ls -BR'
+
+# NCCS systems
+chester ALIASTO 'ssh chester'
+crest ALIASTO 'ssh crest-login1'
+cumulus ALIASTO 'echo "MJB NOTE: enter UCAMS password"; ssh mb3@cumulus.ccs.ornl.gov'
+eos ALIASTO 'ssh eos-login2'
+home ALIASTO 'ssh home'
+hub ALIASTO 'ssh hub'
+peak ALIASTO 'ssh peak.olcf.ornl.gov'
+percival ALIASTO 'ssh percival.ccs.ornl.gov'
+rhea ALIASTO 'ssh rhea'
+summit ALIASTO 'ssh summit.olcf.ornl.gov'
+summitdev ALIASTO 'ssh summitdev-login1'
+techint ALIASTO 'ssh testbed-mgmt1'
+titan ALIASTO 'ssh titan-ext4'
+
+# NCCS/OLCF projects
+apt ALIASTO 'modld mjb-proj/stf010 ; cdproj'
+cdproj ALIASTO 'cd $MJB_PROJECT_DIR'
+cdscratch ALIASTO 'cd $MJB_SCRATCH_DIR'
+eash ALIASTO 'sudo /opt/eas/bin/eash'
+supfa ALIASTO 'sudo su - pfaccept'
+unifycr ALIASTO 'modld mjb-proj/unifycr ; cdproj'
+unity ALIASTO 'modld mjb-proj/unity ; cdproj'
+

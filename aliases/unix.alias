@@ -1,0 +1,42 @@
+# unix directory ops
+cd.. ALIASTO 'cd ..'
+cdl ALIASTO 'cd ARGV ; ls'
+dir ALIASTO 'for de in * ; do [ -d $de ] && [ ! -h $de ] && ls -dl $de ; done'
+mkdir ALIASTO 'mkdir -p'
+
+# unix environment
+env ALIASTO '/usr/bin/env | sort | awk -F= '\''{printf("%-25s = %s\n", $1, $2)}'\'''
+envgrep ALIASTO 'env | fgrep '
+
+# misc unix helpers
+ex ALIASTO exit
+forever ALIASTO 'sh -c "while :; do ARGV ; done"'
+histgrep ALIASTO 'history | fgrep '
+keepalive ALIASTO 'sh -c "while :; do sleep 120 ; echo `/bin/date +%T` - still here ; done"'
+m ALIASTO more
+psmjb ALIASTO 'ps aux | grep $USER'
+sshx ALIASTO 'ssh -X'
+typ ALIASTO 'type'
+
+# ls variants
+l ALIASTO 'ls'
+ls ALIASTO '/bin/ls -bF --color'
+lsr ALIASTO 'ls -R'
+ll ALIASTO 'ls -lh'
+la ALIASTO 'ls -a'
+lal ALIASTO 'ls -lha'
+lla ALIASTO lal
+
+# rm variants
+rf ALIASTO '/bin/rm -f'
+rrf ALIASTO '/bin/rm -rf'
+
+# bash directory stacks
+dirs ALIASTO 'dirs -l -v'
+p ALIASTO 'pushd'
+p2 ALIASTO 'pushd +2'
+p3 ALIASTO 'pushd +3'
+p4 ALIASTO 'pushd +4'
+p5 ALIASTO 'pushd +5'
+p6 ALIASTO 'pushd +6'
+

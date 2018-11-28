@@ -1,0 +1,9 @@
+# pbs/moab helpers
+myjobs ALIASTO 'qstat -u mjbrim ; which showq >/dev/null 2>&1 && showq -u mjbrim'
+pfajobs ALIASTO 'qstat -f -u pfaccept'
+qbatch ALIASTO 'qstat -q batch'
+qdebug ALIASTO 'qstat -q debug'
+qsub-base ALIASTO '`which \qsub`'
+qsub ALIASTO 'qsub-base -A $NCCS_CURRENT_PROJ_ACCT -V '
+qsub-dbg ALIASTO 'qsub -q debug'
+
