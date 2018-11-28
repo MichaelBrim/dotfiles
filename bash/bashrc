@@ -1,0 +1,23 @@
+export MJB_RAN_BASHRC=yes
+
+. ${HOME}/.bashdebug
+
+if [ "x$MJB_ENV_SET" != "xyes" ]; then
+
+    # bash setup
+    debugecho .bashrc sourcing .bashrc_env_pre
+    . ${HOME}/.bashrc_env_pre
+    debugecho .bashrc sourcing .bashrc_aliases
+    . ${HOME}/.bashrc_aliases
+    debugecho .bashrc sourcing .bashrc_functions
+    . ${HOME}/.bashrc_functions
+    debugecho .bashrc sourcing .bashrc_env_post
+    . ${HOME}/.bashrc_env_post
+
+    # custom prompt
+    if [ "$PS1" ]; then
+        #debugecho .bashrc setting custom prompt
+        phost=$(hostname)
+        export PS1="\[\e[31;47m\]$phost \[\e[1m\]\w\[\e[0m\]\n(\#) \[\e[1m\]>\[\e[0m\] "
+    fi
+fi

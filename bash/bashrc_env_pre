@@ -1,0 +1,23 @@
+#
+### Directories
+#
+export MJB_ETC="${HOME}/etc"
+export MJB_INSTALL="${HOME}/install"
+
+#
+### Misc
+#
+
+# use basic locale
+export LC_ALL="C"
+
+# use vim for programs needing EDITOR (e.g., git)
+export EDITOR=vim
+
+# history control
+export HISTCONTROL="ignoreboth:erasedups"
+export HISTIGNORE='dirs:exit:histgrep *:la:ll:lla:ls:p:p2:p3:p4:p5:pwd'
+
+# core dumps, please
+ulimit -c unlimited
+

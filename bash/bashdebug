@@ -1,0 +1,9 @@
+test -z $debugbash && debugbash=0
+declare -f debugecho > /dev/null
+if [ $? -ne 0 ]; then
+debugecho() {
+    curscript=$1
+    shift
+    test $debugbash -ne 0 && echo +++ $curscript +++ $@
+}
+fi

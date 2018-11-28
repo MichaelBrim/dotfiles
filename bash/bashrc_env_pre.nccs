@@ -1,0 +1,44 @@
+#
+### determine system
+#
+thishost=$(hostname -f)
+NCCS_SYSTEM=unknown
+
+[[ $thishost =~ ^chester ]] && NCCS_SYSTEM=chester
+[[ $thishost =~ ^crest ]] && NCCS_SYSTEM=crest
+[[ $thishost =~ ^eos ]] && NCCS_SYSTEM=eos
+[[ $thishost =~ ^percival ]] && NCCS_SYSTEM=percival
+[[ $thishost =~ ^rhea ]] && NCCS_SYSTEM=rhea
+[[ $thishost =~ ^titan ]] && NCCS_SYSTEM=titan
+[[ $thishost =~ ^summitdev ]] && NCCS_SYSTEM=summitdev
+    
+if [[ $thishost =~ ^login ]]; then
+    if [[ $thishost =~ ^login1.peak ]]; then
+        NCCS_SYSTEM=peak
+    elif [[ $thishost =~ ^login[[:digit:]].summit ]]; then
+        NCCS_SYSTEM=summit
+    fi
+fi
+
+if [[ $NCCS_SYSTEM = summitdev ]]; then
+    type -t module >/dev/null 2>&1
+    if [ $? -ne 0 ]; then
+        lmod_init_bash=/sw/summitdev/lmod/7.4.0/rhel7.2_gnu4.8.5/lmod/lmod/init/bash
+        [ -f $lmod_init_bash ] && . $lmod_init_bash 
+    fi
+fi
+
+export NCCS_SYSTEM
+if [[ $NCCS_SYSTEM != unknown ]]; then
+    export MJB_ENV_SET="yes"
+
+    # system-specific settings go in $MJB_ETC/modulefiles/mjb-sys/
+    module use $MJB_ETC/modulefiles
+    module load mjb-sys/$NCCS_SYSTEM
+fi
+    
+# system-specific setup
+if [[ $NCCS_SYSTEM == eos ]]; then
+    module use /sw/xc30/modulefiles
+fi
+
