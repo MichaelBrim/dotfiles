@@ -9,7 +9,7 @@ set autowrite
 set updatetime=750
 
 " look and feel
-set rtp+=/Users/mb3/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+set rtp+=/usr/local/lib/python2.7/lib/python/site-packages/powerline/bindings/vim
 set laststatus=2
 set t_Co=256
 
