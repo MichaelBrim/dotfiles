@@ -1,14 +1,15 @@
 #!/bin/bash
 
-usage="USAGE: $0 session-name [num-windows]"
-if [[ $# -lt 1 || $# -gt 2 ]]; then
+usage="USAGE: $0 session-name working-dir [num-windows]"
+if [[ $# -lt 2 || $# -gt 3 ]]; then
     echo "ERROR: $0 - incorrect usage"
     echo $usage
     exit 1
 fi
 
 sname=$1
-nwin=${2:-3}
+wdir=$2
+nwin=${3:-3}
 
 #echo "DEBUG: session name is $sname, number of windows is $nwin"
 
@@ -16,7 +17,7 @@ nwin=${2:-3}
 [[ -n $HAVE_MJB_BASH_CONFIG ]] && unset HAVE_MJB_BASH_CONFIG
 
 # create detached session with requested name
-tmux new-session -d -s $sname || { echo "ERROR: $0 - session with name $sname exists"; exit 1;}
+tmux new-session -d -c $wdir -s $sname || { echo "ERROR: $0 - session with name $sname exists"; exit 1;}
 
 # create requested number of windows, starting at 2
 for (( w=2; w <= $nwin; w++ )); do
