@@ -1,5 +1,4 @@
 # misc mjb scripts
-killvnc ALIASTO '$HOME/scripts/util/kill_VNC_server.sh home'
 ldpth ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT LD_LIBRARY_PATH`'
 ldadd ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT LD_LIBRARY_PATH add ARGV`'
 ldrm ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT LD_LIBRARY_PATH rm ARGV`'
@@ -7,7 +6,6 @@ note ALIASTO '$HOME/scripts/util/note.sh'
 pth ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT PATH`'
 pthadd ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT PATH add ARGV`'
 pthrm ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT PATH rm ARGV`'
-sfvl ALIASTO '$HOME/scripts/software/snoflake/view-snoflake-log.bash -c'
 
 # HPSS
 hsils ALIASTO 'hsi ls'
@@ -17,7 +15,6 @@ hsillr ALIASTO 'hsi ls -BR'
 
 # NCCS systems
 chester ALIASTO 'ssh chester'
-crest ALIASTO 'ssh crest-login1'
 eos ALIASTO 'ssh eos-login2'
 home ALIASTO 'ssh home'
 hub ALIASTO 'ssh hub'
