@@ -5,18 +5,10 @@ hsill ALIASTO 'hsi ls -B'
 hsillr ALIASTO 'hsi ls -BR'
 
 # NCCS systems
-chester ALIASTO 'ssh chester'
-eos ALIASTO 'ssh eos-login2'
-home ALIASTO 'ssh home'
-hub ALIASTO 'ssh hub'
-lyra ALIASTO 'ssh lyra-login1'
-peak ALIASTO 'ssh peak.olcf.ornl.gov'
-percival ALIASTO 'ssh percival.ccs.ornl.gov'
-rhea ALIASTO 'ssh rhea'
+nccshome ALIASTO 'ssh home.ccs.ornl.gov'
+nccshub ALIASTO 'ssh hub.ccs.ornl.gov'
 summit ALIASTO 'ssh summit.olcf.ornl.gov'
-summitdev ALIASTO 'ssh summitdev-login1'
-techint ALIASTO 'ssh testbed-mgmt1'
-titan ALIASTO 'ssh titan-ext4'
+titan ALIASTO 'ssh titan-ext4.ccs.ornl.gov'
 
 # NCCS/OLCF projects
 apt ALIASTO 'modld mjb-proj/stf010 ; cdproj'
