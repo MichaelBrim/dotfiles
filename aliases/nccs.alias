@@ -1,12 +1,3 @@
-# misc mjb scripts
-ldpth ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT LD_LIBRARY_PATH`'
-ldadd ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT LD_LIBRARY_PATH add ARGV`'
-ldrm ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT LD_LIBRARY_PATH rm ARGV`'
-note ALIASTO '$HOME/scripts/util/note.sh'
-pth ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT PATH`'
-pthadd ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT PATH add ARGV`'
-pthrm ALIASTO 'eval `$HOME/scripts/util/env_path_util.SHELLEXT PATH rm ARGV`'
-
 # HPSS
 hsils ALIASTO 'hsi ls'
 hsilsr ALIASTO 'hsi ls -R'

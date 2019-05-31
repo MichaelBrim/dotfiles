@@ -7,10 +7,14 @@ mkdir ALIASTO 'mkdir -p'
 # unix environment
 env ALIASTO '/usr/bin/env | sort | awk -F= '\''{printf("%-25s = %s\n", $1, $2)}'\'''
 envgrep ALIASTO 'env | fgrep '
+eg ALIASTO 'envgrep'
 
 # misc unix helpers
+aliasgrep ALIASTO 'alias | fgrep'
+ag ALIASTO 'aliasgrep'
 forever ALIASTO 'sh -c "while :; do ARGV ; done"'
 histgrep ALIASTO 'history | fgrep '
+hg ALIASTO 'histgrep'
 keepalive ALIASTO 'sh -c "while :; do sleep 120 ; echo `/bin/date +%T` - still here ; done"'
 m ALIASTO more
 sshx ALIASTO 'ssh -X'

@@ -1,6 +1,6 @@
 # tmux helpers
 tmux ALIASTO 'tmux -2'
-tcreate ALIASTO '~/.tmux/start-tmux.bash'
+tcreate ALIASTO '~/.tmux/create-session.bash'
 tattach ALIASTO 'tmux attach -t'
 tdetach ALIASTO 'tmux detach'
 tsess ALIASTO 'tmux list-sessions'
