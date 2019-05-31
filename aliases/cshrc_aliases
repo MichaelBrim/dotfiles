@@ -1,0 +1,24 @@
+# regenerate common aliases
+$HOME/.aliases/gen_common_aliases.bash
+set aliasfile=$HOME/.common_aliases
+
+set tmpfile=${aliasfile}.cshtmp
+if ( -f $tmpfile ) then 
+    /bin/rm -f $tmpfile 
+endif
+
+if ( -f $aliasfile ) then
+    fgrep 'ALIASTO' $aliasfile | awk -F' ALIASTO ' '! /ARGV/ {printf("alias %s %s\n",$1,$2)}' > $tmpfile
+    fgrep 'ALIASTO' $aliasfile | awk -F' ALIASTO ' '/ARGV/ {printf("alias %s %s\n",$1,$2)}' | sed -e 's/ARGV/\\\!\*/' >> $tmpfile
+    sed -e 's/SHELLEXT/csh/' $tmpfile > ${tmpfile}.csh
+
+    # UNCOMMENT FOLLOWING TO DEBUG:
+    #echo "==== alias tmpfile: ${tmpfile}.csh ===="
+    #cat ${tmpfile}.csh
+    #echo "======================================="
+
+    source ${tmpfile}.csh
+
+    # COMMENT FOLLOWING TO DEBUG:
+    /bin/rm -f ${tmpfile}*
+endif
