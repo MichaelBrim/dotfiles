@@ -1,6 +1,7 @@
-# regenerate common aliases
-$HOME/.aliases/gen_common_aliases.bash
-set aliasfile=$HOME/.common_aliases
+# Use following to regenerate common aliases
+#$HOME/.aliases/gen_common_aliases.bash
+
+set aliasfile=$HOME/.aliases/common_aliases
 
 set tmpfile=${aliasfile}.cshtmp
 if ( -f $tmpfile ) then 

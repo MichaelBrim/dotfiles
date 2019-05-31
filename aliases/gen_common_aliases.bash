@@ -1,5 +1,5 @@
 #!/bin/bash
-ca=$HOME/.common_aliases
+ca=$HOME/.aliases/common_aliases
 [ -f $ca ] && /bin/rm -f $ca
 for af in ~/.aliases/*.alias ; do
    /bin/cat $af >> $ca
