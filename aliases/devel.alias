@@ -1,5 +1,8 @@
 # misc devel helpers
 clean ALIASTO '/bin/rm -f *~ core.*'
+mk ALIASTO '(make clean && make V=1) |& tee build.log'
+mkc ALIASTO 'make clean'
+mki ALIASTO 'make install'
 
 # redhat
 rhdev ALIASTO 'scl enable devtoolset-2'

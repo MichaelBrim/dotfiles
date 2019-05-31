@@ -9,23 +9,25 @@ env ALIASTO '/usr/bin/env | sort | awk -F= '\''{printf("%-25s = %s\n", $1, $2)}'
 envgrep ALIASTO 'env | fgrep '
 
 # misc unix helpers
-ex ALIASTO exit
 forever ALIASTO 'sh -c "while :; do ARGV ; done"'
 histgrep ALIASTO 'history | fgrep '
 keepalive ALIASTO 'sh -c "while :; do sleep 120 ; echo `/bin/date +%T` - still here ; done"'
 m ALIASTO more
-psmjb ALIASTO 'ps aux | grep $USER'
 sshx ALIASTO 'ssh -X'
 typ ALIASTO 'type'
+x ALIASTO exit
 
 # ls variants
 l ALIASTO 'ls'
-ls ALIASTO '/bin/ls -bF --color'
+ls ALIASTO '/bin/ls -bhF --color'
 lsr ALIASTO 'ls -R'
-ll ALIASTO 'ls -lh'
+ll ALIASTO 'ls -l'
 la ALIASTO 'ls -a'
-lal ALIASTO 'ls -lha'
-lla ALIASTO lal
+lla ALIASTO 'll -a'
+
+# ps variants
+psmjb ALIASTO 'ps aux | grep $USER | grep -v grep'
+psgrep ALIASTO 'ps aux | fgrep'
 
 # rm variants
 rf ALIASTO '/bin/rm -f'

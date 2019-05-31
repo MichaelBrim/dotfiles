@@ -1,8 +1,8 @@
 # tmux helpers
 tmux ALIASTO 'tmux -2'
-newsess ALIASTO '~/.tmux/start-tmux.bash'
-sess ALIASTO 'tmux list-sessions'
-attach ALIASTO 'tmux attach -t'
-detach ALIASTO 'tmux detach'
-share ALIASTO 'tmux new-session -t'
+tcreate ALIASTO '~/.tmux/start-tmux.bash'
+tattach ALIASTO 'tmux attach -t'
+tdetach ALIASTO 'tmux detach'
+tsess ALIASTO 'tmux list-sessions'
+tshare ALIASTO 'tmux new-session -t'
 
