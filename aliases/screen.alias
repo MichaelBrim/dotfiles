@@ -1,5 +1,5 @@
 # screen helpers
-scr ALIASTO 'unset MJB_ENV_SET; unset MJB_RAN_BASHRC; screen'
-attach ALIASTO 'screen -r'
-detach ALIASTO 'screen -d'
+screate ALIASTO 'unset MJB_ENV_SET; unset MJB_RAN_BASHRC; screen'
+sattach ALIASTO 'screen -r'
+sdetach ALIASTO 'screen -d'
 
