@@ -3,7 +3,7 @@
 
 aliasfile=$HOME/.aliases/common_aliases
 if [ -f $aliasfile ]; then
-    tmpfile=$(mktemp $TMPDIR/aliases.bashtmp.$$.XXXXXX)
+    tmpfile=$(mktemp /tmp/aliases.bashtmp.$$.XXXXXX)
     [[ -f $tmpfile ]] || { echo "ERROR: mktemp failed"; exit 1; }
     
     fgrep ALIASTO $aliasfile | awk -F' ALIASTO ' '! /ARGV/ {printf("alias %s=%s\n",$1,$2)}' > $tmpfile
