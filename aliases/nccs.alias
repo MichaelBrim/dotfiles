@@ -1,20 +1,20 @@
 # HPSS
-hsils  ALIASTO 'hsi ls'
+hsils ALIASTO 'hsi ls'
 hsilsr ALIASTO 'hsi ls -R'
-hsill  ALIASTO 'hsi ls -B'
+hsill ALIASTO 'hsi ls -B'
 hsillr ALIASTO 'hsi ls -BR'
 
 # NCCS systems
 nccshome ALIASTO 'ssh $NCCS_USER@home.ccs.ornl.gov'
-nccshub  ALIASTO 'ssh $NCCS_USER@hub.ccs.ornl.gov'
-summit   ALIASTO 'ssh $NCCS_USER@summit.olcf.ornl.gov'
-titan    ALIASTO 'ssh $NCCS_USER@titan-ext4.ccs.ornl.gov'
+nccshub ALIASTO 'ssh $NCCS_USER@hub.ccs.ornl.gov'
+summit ALIASTO 'ssh $NCCS_USER@summit.olcf.ornl.gov'
+titan ALIASTO 'ssh $NCCS_USER@titan-ext4.ccs.ornl.gov'
 
 # NCCS/OLCF projects
-cdproj       ALIASTO 'cd $MJB_PROJECT_DIR'
-cdscratch    ALIASTO 'cd $MJB_SCRATCH_DIR'
-proj-apt     ALIASTO 'modld mjb-proj/apt ; cdproj'
-proj-summit  ALIASTO 'modld mjb-proj/summit ; cdproj'
+cdproj ALIASTO 'cd $MJB_PROJECT_DIR'
+cdscratch ALIASTO 'cd $MJB_SCRATCH_DIR'
+proj-apt ALIASTO 'modld mjb-proj/apt ; cdproj'
+proj-summit ALIASTO 'modld mjb-proj/summit ; cdproj'
 proj-unifycr ALIASTO 'modld mjb-proj/unifycr ; cdproj'
-proj-unity   ALIASTO 'modld mjb-proj/unity ; cdproj'
+proj-unity ALIASTO 'modld mjb-proj/unity ; cdproj'
 
