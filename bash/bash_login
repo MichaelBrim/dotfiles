@@ -1,15 +1,6 @@
 . ${HOME}/.bashdebug
 
-debugecho .bash_login Setting up modules environment
-if [ -f /opt/modules/default/etc/profile.modules ]; then
-    . /opt/modules/default/etc/profile.modules
-elif [ -f /opt/modules/default/etc/modules.sh ]; then
-    . /opt/modules/default/etc/modules.sh
-elif [ -f /etc/profile.d/modules.sh ]; then
-    . /etc/profile.d/modules.sh
-fi
-
-if [ "x$MJB_RAN_BASHRC" = "x" ]; then
+if [ "x$HAVE_MJB_BASH_CONFIG" = "x" ]; then
     debugecho .bash_login Sourcing .bashrc 
     . ${HOME}/.bashrc
 fi
