@@ -21,3 +21,6 @@ export HISTIGNORE='dirs:exit:histgrep *:la:ll:lla:ls:p:p2:p3:p4:p5:pwd'
 # core dumps, please
 ulimit -c unlimited
 
+for bep in $HOME/.bashrc_env_pre.* ; do
+    source $bep
+done

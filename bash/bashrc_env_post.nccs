@@ -1,7 +1,0 @@
-# system-specific settings go in $MJB_ETC/modulefiles/mjb-sys/
-if [[ $NCCS_SYSTEM != unknown ]]; then
-    source ${HOME}/scripts/job/qctl.bash
-    module use $MJB_ETC/modulefiles
-    module load mjb-sys/$NCCS_SYSTEM
-fi
-

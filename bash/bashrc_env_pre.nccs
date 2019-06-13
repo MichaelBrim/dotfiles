@@ -4,14 +4,12 @@
 thishost=$(hostname -f)
 NCCS_SYSTEM=unknown
 
-[[ $thishost =~ ^chester ]] && NCCS_SYSTEM=chester
-[[ $thishost =~ ^crest ]] && NCCS_SYSTEM=crest
 [[ $thishost =~ ^eos ]] && NCCS_SYSTEM=eos
-[[ $thishost =~ ^percival ]] && NCCS_SYSTEM=percival
+[[ $thishost =~ ^hub ]] && NCCS_SYSTEM=hub
+[[ $thishost =~ ^lyra ]] && NCCS_SYSTEM=lyra
 [[ $thishost =~ ^rhea ]] && NCCS_SYSTEM=rhea
 [[ $thishost =~ ^titan ]] && NCCS_SYSTEM=titan
 [[ $thishost =~ ^summitdev ]] && NCCS_SYSTEM=summitdev
-    
 if [[ $thishost =~ ^login ]]; then
     if [[ $thishost =~ ^login1.peak ]]; then
         NCCS_SYSTEM=peak
@@ -19,6 +17,7 @@ if [[ $thishost =~ ^login ]]; then
         NCCS_SYSTEM=summit
     fi
 fi
+export NCCS_SYSTEM
 
 type -t module >/dev/null 2>&1
 if [ $? -ne 0 ]; then
@@ -35,15 +34,13 @@ if [ $? -ne 0 ]; then
     fi
 fi
 
-export NCCS_SYSTEM
+# load system-specific modules
 if [[ $NCCS_SYSTEM != unknown ]]; then
     # system-specific settings go in $MJB_ETC/modulefiles/mjb-sys/
     module use $MJB_ETC/modulefiles
     module load mjb-sys/$NCCS_SYSTEM
-fi
-    
-# system-specific setup
-if [[ $NCCS_SYSTEM == eos ]]; then
-    module use /sw/xc30/modulefiles
-fi
 
+    if [[ $NCCS_SYSTEM == eos ]]; then
+        module use /sw/xc30/modulefiles
+    fi
+fi
