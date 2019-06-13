@@ -15,6 +15,7 @@ nwin=${3:-3}
 
 # make new bash programs reload environment/aliases
 [[ -n $HAVE_MJB_BASH_CONFIG ]] && unset HAVE_MJB_BASH_CONFIG
+[[ -n $MJB_ENV_SET ]] && unset MJB_ENV_SET
 
 # create detached session with requested name
 tmux new-session -d -c $wdir -s $sname || { echo "ERROR: $0 - session with name $sname exists"; exit 1;}
