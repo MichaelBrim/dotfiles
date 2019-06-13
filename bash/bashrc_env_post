@@ -1,8 +1,5 @@
 # env setup that can use aliases
 
-# set custom paths
-if [[ $MJB_ENV_SET == yes ]]; then
-    # scripts area
-    pthadd front ${HOME}/scripts
-fi
+# pickup exectuable scripts
+pthadd front ${HOME}/scripts
 
