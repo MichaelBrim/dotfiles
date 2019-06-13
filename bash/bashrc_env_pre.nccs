@@ -20,18 +20,23 @@ if [[ $thishost =~ ^login ]]; then
     fi
 fi
 
-if [[ $NCCS_SYSTEM = summitdev ]]; then
-    type -t module >/dev/null 2>&1
-    if [ $? -ne 0 ]; then
+type -t module >/dev/null 2>&1
+if [ $? -ne 0 ]; then
+    debugecho .bashrc Setting up modules environment
+    if [[ $NCCS_SYSTEM = summitdev ]]; then
         lmod_init_bash=/sw/summitdev/lmod/7.4.0/rhel7.2_gnu4.8.5/lmod/lmod/init/bash
-        [ -f $lmod_init_bash ] && . $lmod_init_bash 
+        [ -f $lmod_init_bash ] && source $lmod_init_bash 
+    elif [ -f /opt/modules/default/etc/profile.modules ]; then
+        source /opt/modules/default/etc/profile.modules
+    elif [ -f /opt/modules/default/etc/modules.sh ]; then
+        source /opt/modules/default/etc/modules.sh
+    elif [ -f /etc/profile.d/modules.sh ]; then
+        source /etc/profile.d/modules.sh
     fi
 fi
 
 export NCCS_SYSTEM
 if [[ $NCCS_SYSTEM != unknown ]]; then
-    export MJB_ENV_SET="yes"
-
     # system-specific settings go in $MJB_ETC/modulefiles/mjb-sys/
     module use $MJB_ETC/modulefiles
     module load mjb-sys/$NCCS_SYSTEM
