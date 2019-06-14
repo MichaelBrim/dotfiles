@@ -3,3 +3,7 @@
 # pickup exectuable scripts
 pthadd front ${HOME}/scripts
 
+for bep in $HOME/.bashrc_env_post.* ; do
+    source $bep
+done
+
