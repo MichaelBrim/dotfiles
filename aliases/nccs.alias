@@ -19,3 +19,6 @@ proj-summit ALIASTO 'modld mjb-proj/summit ; cdproj'
 proj-unifycr ALIASTO 'modld mjb-proj/unifycr ; cdproj'
 proj-unity ALIASTO 'modld mjb-proj/unity ; cdproj'
 
+# NCCS GitLab
+nccsgit ALIASTO 'GIT_SSH_COMMAND="ssh -i ~/.ssh/nccs-id_rsa" git'
+
