@@ -1,6 +1,17 @@
+# set up bash init debugging
 . ${HOME}/.bashdebug
 
-if [ "x$HAVE_MJB_BASH_CONFIG" = "x" ]; then
+# if not already done, source .bashrc to pickup my desired config
+if [[ -z $HAVE_MJB_BASH_CONFIG ]]; then
     debugecho .bash_login Sourcing .bashrc 
     . ${HOME}/.bashrc
+fi
+
+# run localization scripts
+login_scripts=$(ls ${HOME}/.bash_login.* 2>/dev/null)
+if [[ -n $login_scripts ]]; then
+    for bls in $login_scripts ; do
+        debugecho .bash_login Sourcing $bls
+        source $bls
+    done
 fi
