@@ -24,7 +24,7 @@ fi
 #
 ### Localization
 #
-pre_scripts=$(ls $HOME/.bashrc_env_pre.* 2>/dev/null)
+pre_scripts=$(/bin/ls $HOME/.bashrc_env_pre.* 2>/dev/null)
 if [[ -n $pre_scripts ]]; then
     for bep in $pre_scripts ; do
         source $bep

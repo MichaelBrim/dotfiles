@@ -6,7 +6,7 @@ pthadd front ${HOME}/scripts
 #
 ### Localization
 #
-post_scripts=$(ls $HOME/.bashrc_env_post.* 2>/dev/null)
+post_scripts=$(/bin/ls $HOME/.bashrc_env_post.* 2>/dev/null)
 if [[ -n $post_scripts ]]; then
     for bep in $post_scripts ; do
         source $bep

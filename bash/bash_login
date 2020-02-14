@@ -8,7 +8,7 @@ if [[ -z $HAVE_MJB_BASH_CONFIG ]]; then
 fi
 
 # run localization scripts
-login_scripts=$(ls ${HOME}/.bash_login.* 2>/dev/null)
+login_scripts=$(/bin/ls ${HOME}/.bash_login.* 2>/dev/null)
 if [[ -n $login_scripts ]]; then
     for bls in $login_scripts ; do
         debugecho .bash_login Sourcing $bls
