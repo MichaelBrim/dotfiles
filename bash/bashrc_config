@@ -1,0 +1,12 @@
+# set desired bash options
+#ulimit -c unlimited    # produce core dumps
+
+# history behavior
+export HISTCONTROL=ignoreboth:erasedups
+export HISTIGNORE='clear:dirs:exit:histgrep *:history*:la:ll:lla:ls:p:p2:p3:p4:p5:psmjb:pwd:top'
+
+# set local directory for software installs
+export MJB_INSTALL=~/Documents/sw
+
+# do this last
+export HAVE_MJB_BASH_CONFIG=yes
