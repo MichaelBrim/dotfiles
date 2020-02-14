@@ -1,5 +1,5 @@
 # start gpg-agent
 ga_running=$(pgrep gpg-agent)
 if [[ -z $ga_running ]]; then
-   eval $(gpg-agent --daemon)
+   eval $(gpg-connect-agent /bye)
 fi
