@@ -1,4 +1,4 @@
-
+# bash script debugging
 [ -f $HOME/.bashdebug ] && source $HOME/.bashdebug
 
 # configure bash
@@ -19,9 +19,16 @@ if [[ -z $HAVE_MJB_BASH_ENV ]]; then
     export HAVE_MJB_BASH_ENV=yes
 
     # set custom prompt
-    if [ "$PS1" ]; then
+    if [[ -n $PS1 ]]; then
         #debugecho .bashrc setting custom prompt
         phost=$(hostname -s)
         export PS1="\[\e[31;47m\]$phost \[\e[1m\]\w\[\e[0m\]\n(\#) \[\e[1m\]>\[\e[0m\] "
     fi
+fi
+
+#### EVERY TIME SETTINGS ####
+
+# gpg-agent support
+if [[ -n $PS1 ]]; then
+   export GPG_TTY=$(tty)
 fi
