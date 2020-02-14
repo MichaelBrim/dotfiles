@@ -1,9 +1,15 @@
-# env setup that can use aliases
+# bashrc_env_post : Environment setup that can use aliases and functions
 
 # pickup exectuable scripts
 pthadd front ${HOME}/scripts
 
-for bep in $HOME/.bashrc_env_post.* ; do
-    source $bep
-done
+#
+### Localization
+#
+post_scripts=$(ls $HOME/.bashrc_env_post.* 2>/dev/null)
+if [[ -n $post_scripts ]]; then
+    for bep in $post_scripts ; do
+        source $bep
+    done
+fi
 

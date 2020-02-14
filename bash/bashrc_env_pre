@@ -1,11 +1,7 @@
-#
-### Directories
-#
-export MJB_ETC="${HOME}/etc"
-export MJB_INSTALL="${HOME}/install"
+# bashrc_env_pre : Environment setup that cannot use aliases and functions
 
 #
-### Misc
+### Common Settings
 #
 
 # use basic locale
@@ -14,13 +10,23 @@ export LC_ALL="C"
 # use vim for programs needing EDITOR (e.g., git)
 export EDITOR=vim
 
-# history control
-export HISTCONTROL="ignoreboth:erasedups"
-export HISTIGNORE='dirs:exit:histgrep *:la:ll:lla:ls:p:p2:p3:p4:p5:pwd'
+#
+### Directories
+#
 
-# core dumps, please
-ulimit -c unlimited
+if [[ -n $MJB_INSTALL ]]; then
+    export MJB_BIN="${MJB_INSTALL}/bin"
+    export MJB_LIB="${MJB_INSTALL}/lib"
+    export MJB_SHR="${MJB_INSTALL}/share"
+    export MJB_ETC="${MJB_INSTALL}/etc"
+fi
 
-for bep in $HOME/.bashrc_env_pre.* ; do
-    source $bep
-done
+#
+### Localization
+#
+pre_scripts=$(ls $HOME/.bashrc_env_pre.* 2>/dev/null)
+if [[ -n $pre_scripts ]]; then
+    for bep in $pre_scripts ; do
+        source $bep
+    done
+fi
