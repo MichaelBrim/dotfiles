@@ -1,10 +1,12 @@
-export HAVE_MJB_BASH_CONFIG=yes
 
-. ${HOME}/.bashdebug
+[ -f $HOME/.bashdebug ] && source $HOME/.bashdebug
 
-if [ "x$MJB_ENV_SET" != "xyes" ]; then
+# configure bash
+[ -f $HOME/.bashrc_config ] && source $HOME/.bashrc_config
 
-    # bash setup
+# customize bash environment, aliases, and functions
+if [[ -z $HAVE_MJB_BASH_ENV ]]; then
+
     debugecho .bashrc sourcing .bashrc_env_pre
     [ -f $HOME/.bashrc_env_pre ] && source $HOME/.bashrc_env_pre
     debugecho .bashrc sourcing .bashrc_aliases
@@ -14,12 +16,12 @@ if [ "x$MJB_ENV_SET" != "xyes" ]; then
     debugecho .bashrc sourcing .bashrc_env_post
     [ -f $HOME/.bashrc_env_post ] && source $HOME/.bashrc_env_post
 
-    # custom prompt
+    export HAVE_MJB_BASH_ENV=yes
+
+    # set custom prompt
     if [ "$PS1" ]; then
         #debugecho .bashrc setting custom prompt
         phost=$(hostname -s)
         export PS1="\[\e[31;47m\]$phost \[\e[1m\]\w\[\e[0m\]\n(\#) \[\e[1m\]>\[\e[0m\] "
     fi
-
-    export MJB_ENV_SET=yes
 fi
