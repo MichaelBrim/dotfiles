@@ -22,3 +22,6 @@ proj-unity ALIASTO 'modld mjb-proj/unity ; cdproj'
 # NCCS GitLab
 nccsgit ALIASTO 'GIT_SSH_COMMAND="ssh -i ~/.ssh/nccs-id_rsa" git'
 
+# OLCF Slate
+marble ALIASTO 'oc login https://api.marble.ccs.ornl.gov'
+onyx ALIASTO 'oc login https://onyx.ccs.ornl.gov'
