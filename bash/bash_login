@@ -15,3 +15,6 @@ if [[ -n $login_scripts ]]; then
         source $bls
     done
 fi
+
+# get auto-completion for various programs
+[[ -f /usr/local/etc/bash_completion ]] && source /usr/local/etc/bash_completion
