@@ -1,0 +1,8 @@
+# This is Git's per-user configuration file.
+[core]
+	excludesfile = /Users/mb3/.gitignore_global
+[push]
+	default = simple
+[user]
+	name = Michael J. Brim
+	email = brimmj@ornl.gov
