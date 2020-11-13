@@ -16,8 +16,9 @@ proj-apt ALIASTO 'modld mjb-proj/apt ; cdproj'
 proj-summit ALIASTO 'modld mjb-proj/summit ; cdproj'
 proj-unify ALIASTO 'modld mjb-proj/unify ; cdproj'
 
-# qctl
-qctl ALIASTO '$HOME/software/git-repos/github/MichaelBrim/hpc-script-foo/qctl/qctl'
-Qjobs ALIASTO 'qctl status -u $USER'
-Qstat ALIASTO 'qctl status -q batch'
-Qhosts ALIASTO 'qctl hosts'
+# NCCS GitLab
+nccsgit ALIASTO 'GIT_SSH_COMMAND="ssh -i ~/.ssh/nccs-id_rsa" git'
+
+# OLCF Slate
+marble ALIASTO 'oc login https://api.marble.ccs.ornl.gov'
+onyx ALIASTO 'oc login https://onyx.ccs.ornl.gov'

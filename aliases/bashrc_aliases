@@ -1,3 +1,5 @@
+# bashrc_aliases : generates bash-style aliases from common_aliases format
+
 # Use following to regenerate common aliases
 #$HOME/.aliases/gen_common_aliases.bash
 

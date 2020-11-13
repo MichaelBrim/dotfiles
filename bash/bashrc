@@ -1,10 +1,12 @@
-export HAVE_MJB_BASH_CONFIG=yes
+# bash script debugging
+[ -f $HOME/.bashdebug ] && source $HOME/.bashdebug
 
-. ${HOME}/.bashdebug
+# configure bash
+[ -f $HOME/.bashrc_config ] && source $HOME/.bashrc_config
 
-if [ "x$MJB_ENV_SET" != "xyes" ]; then
+# customize bash environment, aliases, and functions
+if [[ -z $HAVE_MJB_BASH_ENV ]]; then
 
-    # bash setup
     debugecho .bashrc sourcing .bashrc_env_pre
     [ -f $HOME/.bashrc_env_pre ] && source $HOME/.bashrc_env_pre
     debugecho .bashrc sourcing .bashrc_aliases
@@ -14,12 +16,19 @@ if [ "x$MJB_ENV_SET" != "xyes" ]; then
     debugecho .bashrc sourcing .bashrc_env_post
     [ -f $HOME/.bashrc_env_post ] && source $HOME/.bashrc_env_post
 
-    # custom prompt
-    if [ "$PS1" ]; then
+    export HAVE_MJB_BASH_ENV=yes
+
+    # set custom prompt
+    if [[ -n $PS1 ]]; then
         #debugecho .bashrc setting custom prompt
         phost=$(hostname -s)
         export PS1="\[\e[31;47m\]$phost \[\e[1m\]\w\[\e[0m\]\n(\#) \[\e[1m\]>\[\e[0m\] "
     fi
+fi
 
-    export MJB_ENV_SET=yes
+#### EVERY TIME SETTINGS ####
+
+# gpg-agent support
+if [[ -n $PS1 ]]; then
+   export GPG_TTY=$(tty)
 fi

@@ -1,6 +1,6 @@
 #!/bin/bash
 ca=$HOME/.aliases/common_aliases
-[ -f $ca ] && /bin/rm -f $ca
+[ -f $ca ] && /bin/mv $ca ${ca}.prev
 for af in ~/.aliases/*.alias ; do
    /bin/cat $af >> $ca
 done
