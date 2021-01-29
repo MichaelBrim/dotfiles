@@ -7,6 +7,7 @@ hsillr ALIASTO 'hsi ls -BR'
 # NCCS systems
 nccsfs ALIASTO 'sshfs $NCCS_USER@dtn.ccs.ornl.gov: ~/Documents/NCCS/fs -o cache=no,nolocalcaches,sshfs_sync,follow_symlinks,defer_permissions,noappledouble,volname=nccsfs'
 nccshome ALIASTO 'ssh $NCCS_USER@home.ccs.ornl.gov'
+nccshub ALIASTO 'ssh $NCCS_USER@hub.ccs.ornl.gov'
 summit ALIASTO 'ssh $NCCS_USER@summit.olcf.ornl.gov'
 
 # NCCS/OLCF projects
@@ -22,3 +23,4 @@ nccsgit ALIASTO 'GIT_SSH_COMMAND="ssh -i ~/.ssh/nccs-id_rsa" git'
 # OLCF Slate
 marble ALIASTO 'oc login https://api.marble.ccs.ornl.gov'
 onyx ALIASTO 'oc login https://onyx.ccs.ornl.gov'
+
