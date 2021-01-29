@@ -1,8 +1,9 @@
 # misc devel helpers
 clean ALIASTO '/bin/rm -f *~ core.*'
-mk ALIASTO '(make clean && make V=1) |& tee build.log'
-mkc ALIASTO 'make clean'
-mki ALIASTO 'make install'
+mk ALIASTO '(make clean && make V=1) |& tee mjb-make-build.log'
+mkc ALIASTO 'make clean V=1 |& tee mjb-make-clean.log'
+mkck ALIASTO 'make check V=1 |& tee mjb-make-check.log'
+mki ALIASTO 'make install V=1 |& tee mjb-make-install.log'
 
 # cloc
 cloc ALIASTO 'cloc --by-file-by-lang'
@@ -19,7 +20,8 @@ udiff ALIASTO 'diff -u'
 ga ALIASTO 'git add'
 gc ALIASTO 'git commit -m'
 gd ALIASTO 'git diff'
-gf ALIASTO 'git fetch'
+gf ALIASTO 'git fetch -p'
 gp ALIASTO 'git pull'
+gr ALIASTO 'git rebase -i'
 gs ALIASTO 'git status'
 
