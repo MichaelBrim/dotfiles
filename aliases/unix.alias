@@ -24,7 +24,7 @@ x ALIASTO exit
 
 # ls variants
 l ALIASTO 'ls'
-ls ALIASTO '/bin/ls -bhF'
+ls ALIASTO '/bin/ls -bhF --color=auto'
 lsr ALIASTO 'ls -R'
 ll ALIASTO 'ls -l'
 la ALIASTO 'ls -a'
