@@ -9,6 +9,7 @@ nccsfs ALIASTO 'sshfs $NCCS_USER@dtn.ccs.ornl.gov: ~/Documents/NCCS/fs -o cache=
 nccsfs-cache ALIASTO 'sshfs $NCCS_USER@dtn.ccs.ornl.gov: ~/Documents/NCCS/fs -o auto_cache,compression=no,follow_symlinks,defer_permissions,noappledouble,noapplexattr,volname=nccsfs'
 nccshome ALIASTO 'ssh $NCCS_USER@home.ccs.ornl.gov'
 nccshub ALIASTO 'ssh $NCCS_USER@hub.ccs.ornl.gov'
+andes ALIASTO 'ssh $NCCS_USER@andes.olcf.ornl.gov'
 summit ALIASTO 'ssh $NCCS_USER@summit.olcf.ornl.gov'
 ascent ALIASTO 'ssh $NCCS_OPEN_USER@login1.ascent.olcf.ornl.gov'
 
@@ -16,7 +17,7 @@ ascent ALIASTO 'ssh $NCCS_OPEN_USER@login1.ascent.olcf.ornl.gov'
 cdproj ALIASTO 'cd $MJB_PROJECT_DIR'
 cdscratch ALIASTO 'cd $MJB_SCRATCH_DIR'
 proj-apt ALIASTO 'modld mjb-proj/apt ; cdproj'
-proj-summit ALIASTO 'modld mjb-proj/summit ; cdproj'
+proj-frontier ALIASTO 'modld mjb-proj/frontier ; cdproj'
 proj-unify ALIASTO 'modld mjb-proj/unify ; cdproj'
 
 # NCCS ssh/git Identity
@@ -26,5 +27,5 @@ nccsgitr ALIASTO 'GIT_SSH_COMMAND="ssh -i ~/.ssh/nccs-id_rsa -o ProxyCommand=\"c
 
 # OLCF Slate
 marble ALIASTO 'oc login https://api.marble.ccs.ornl.gov'
-onyx ALIASTO 'oc login https://onyx.ccs.ornl.gov'
+onyx ALIASTO 'oc login https://api.onyx.ccs.ornl.gov'
 
