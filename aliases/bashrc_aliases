@@ -10,7 +10,7 @@ if [ -f $aliasfile ]; then
     
     fgrep ALIASTO $aliasfile | awk -F' ALIASTO ' '! /ARGV/ {printf("alias %s=%s\n",$1,$2)}' > $tmpfile
     fgrep ALIASTO $aliasfile | awk -F' ALIASTO ' '/ARGV/ {printf("%s() { %s ; }\n",$1,substr($2,2,length($2)-2))}' | sed -e 's/ARGV/\$\@/' >> $tmpfile
-    sed -e 's/SHELLEXT/bash/' $tmpfile > ${tmpfile}.sh
+    sed -e 's/SHELLEXT/bash/g' $tmpfile > ${tmpfile}.sh
     # UNCOMMENT FOLLOWING TO DEBUG:
     #echo "==== alias tmpfile : ${tmpfile}.sh ===="
     #cat ${tmpfile}.sh

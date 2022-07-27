@@ -11,7 +11,7 @@ endif
 if ( -f $aliasfile ) then
     fgrep 'ALIASTO' $aliasfile | awk -F' ALIASTO ' '! /ARGV/ {printf("alias %s %s\n",$1,$2)}' > $tmpfile
     fgrep 'ALIASTO' $aliasfile | awk -F' ALIASTO ' '/ARGV/ {printf("alias %s %s\n",$1,$2)}' | sed -e 's/ARGV/\\\!\*/' >> $tmpfile
-    sed -e 's/SHELLEXT/csh/' $tmpfile > ${tmpfile}.csh
+    sed -e 's/SHELLEXT/csh/g' $tmpfile > ${tmpfile}.csh
 
     # UNCOMMENT FOLLOWING TO DEBUG:
     #echo "==== alias tmpfile: ${tmpfile}.csh ===="

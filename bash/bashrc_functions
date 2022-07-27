@@ -1,8 +1,9 @@
-cdup () 
-{ 
-    cnt=${1:-1};
-    while [ $cnt -ne 0 ]; do
-        cd ..;
-        cnt=`expr $cnt - 1`;
+#
+### Localization
+#
+bash_funcs=$(/bin/ls $HOME/.bash_functions/* 2>/dev/null)
+if [[ -n $bash_funcs ]]; then
+    for bf in $bash_funcs ; do
+        source $bf
     done
-}
+fi
