@@ -17,6 +17,16 @@ patchdiff ALIASTO 'diff -Naur'
 pdiff ALIASTO 'patchdiff'
 udiff ALIASTO 'diff -u'
 
+# docker
+dk ALIASTO 'docker'
+dkb ALIASTO 'docker build'
+dkc ALIASTO 'docker container'
+dkcomp ALIASTO 'docker-compose'
+dki ALIASTO 'docker image'
+dkr ALIASTO 'docker run'
+dkri ALIASTO 'docker run -it'
+dkv ALIASTO 'docker volume'
+
 # git
 ga ALIASTO 'git add'
 gb ALIASTO 'git branch -a'

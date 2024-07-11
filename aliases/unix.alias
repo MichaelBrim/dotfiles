@@ -5,7 +5,7 @@ dir ALIASTO 'for de in * ; do [ -d $de ] && [ ! -h $de ] && ls -dl $de ; done'
 mkdir ALIASTO 'mkdir -p'
 
 # unix environment
-env ALIASTO '/usr/bin/env | sort | awk -F= '\''{printf("%-25s = %s\n", $1, $2)}'\'''
+env ALIASTO '/usr/bin/env | sort | awk -F= '\''/^([[:alpha:]][[:alnum:]_]+)=([^[:space:]]+)/{printf("%-25s = %s\n", $1, $2)}'\'''
 envgrep ALIASTO 'env | fgrep '
 eg ALIASTO 'envgrep'
 
@@ -46,4 +46,7 @@ p3 ALIASTO 'pushd +3'
 p4 ALIASTO 'pushd +4'
 p5 ALIASTO 'pushd +5'
 p6 ALIASTO 'pushd +6'
+p7 ALIASTO 'pushd +7'
+p8 ALIASTO 'pushd +8'
+p9 ALIASTO 'pushd +9'
 
